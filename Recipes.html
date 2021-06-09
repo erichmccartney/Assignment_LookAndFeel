@@ -2,6 +2,7 @@
 
 <head>
     <title>www.foodies.com</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.js"></script>
 
     <style>
         body {
@@ -18,7 +19,7 @@
         h1 {
             font-family: Arial;
             font-size: 20px;
-           }
+        }
 
         h1 {
             font-family: Beauty;
@@ -55,6 +56,29 @@
                 <li>Halal
             </ol>
         </p>
+        <h3>Nutrition Information</h3>
+
+        <canvas id="pie-chart" style="position: relative; height:1vh; width:1vw"></canvas>
+
+        <script>
+            new Chart(document.getElementById("pie-chart"), {
+                type: 'pie',
+                data: {
+                    labels: ["Fat", "Carbohydrates", "Protien"],
+                    datasets: [{
+                        label: "Calories",
+                        backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f"],
+                        data: [200, 500, 300]
+                    }]
+                },
+                options: {
+                    title: {
+                        display: true,
+                        text: 'Predicted world population (millions) in 2050'
+                    }
+                }
+            });
+        </script>
     </center>
 </body>
 
