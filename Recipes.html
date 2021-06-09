@@ -2,10 +2,12 @@
 
 <head>
     <title>www.foodies.com</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.js"></script>
 
     <style>
         body {
-            font-family: Consolas;
+            font-family: 'Monotype Corsiva';
+            font-size: 30px;
             background-image: url('img/background pages-01.png');
             height: 100%;
             background-position: center;
@@ -15,7 +17,8 @@
 
 
         h1 {
-            font-family: Consolas;
+            font-family: Arial;
+            font-size: 20px;
         }
 
         h1 {
@@ -34,7 +37,49 @@
 </head>
 
 <body>
-    <h1>Recipes</h1>
+    <center><h1>Recipes</h1></center>
+    <center>
+        <p>
+            In this section you will be able to find our many recipes
+            curated by our expert chefs!
+        </p>
+    </center>
+    <center>
+        <p>
+            Our recipes meet many different palates as well as meeting many dietary restrictions including:
+            <ol>
+                <li>Gluten Allergies
+                <li>Lactose Intolerance
+                <li>Diabetic Restrictions
+                <li> Vegetarian/Vegan
+                <li>Kosher
+                <li>Halal
+            </ol>
+        </p>
+        <h3>Nutrition Information</h3>
+
+        <canvas id="pie-chart" style="position: relative; height:1vh; width:1vw"></canvas>
+
+        <script>
+            new Chart(document.getElementById("pie-chart"), {
+                type: 'pie',
+                data: {
+                    labels: ["Fat", "Carbohydrates", "Protien"],
+                    datasets: [{
+                        label: "Calories",
+                        backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f"],
+                        data: [200, 500, 300]
+                    }]
+                },
+                options: {
+                    title: {
+                        display: true,
+                        text: 'Predicted world population (millions) in 2050'
+                    }
+                }
+            });
+        </script>
+    </center>
 </body>
 
 
